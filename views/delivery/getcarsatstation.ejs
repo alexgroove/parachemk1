@@ -1,0 +1,42 @@
+<div class="container">
+
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Railcar Number</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% for(var i=0, len=cars.length; i < len; i++) { %>
+				<tr>
+					<td><%= cars[i].Railcar %></td>
+					<td><a class="btn btn-info car-info-btn" href="/cars/<%= cars[i].RailCarID %>">Details</a></td>
+				</tr>
+			<% } %>
+		</tbody>		
+
+
+	</table>
+
+</div>
+
+
+<script type="text/javascript">
+	$(document).ready(function () {
+
+		$('.car-info-btn').on('click', function (e) {
+			e.preventDefault();
+			$.ajax({
+				url: this.href,
+				success: function (data) {
+					console.log(data);
+				}
+			})
+		});
+
+
+
+	})
+	
+</script>
+

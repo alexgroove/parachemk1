@@ -1,0 +1,33 @@
+<table class="table table-hover">
+	<thead>
+		<tr>
+
+		<% for(var i=0, len=columns.length; i < len; i++) { %>
+
+			<th><%= columns[i].COLUMN_NAME %></th>
+
+		<% } %>
+
+		</tr>
+	</thead>
+	<tbody>
+
+	<% for(var i=0; i < cars.length; i++) { %>
+
+		<tr>
+		
+		<% for(var j=0; j < columns.length; j++) { %>
+
+			<td><%= cars[i][columns[j].COLUMN_NAME] %></td>
+
+		<% } %>
+			<!-- <td><button class="btn btn-info">Voir les details</button></td> -->
+			<!-- <td><button class="btn btn-primary">Ajouter</button></td> -->
+
+		</tr>
+
+	<% } %>
+
+	</tbody>
+
+</table>
